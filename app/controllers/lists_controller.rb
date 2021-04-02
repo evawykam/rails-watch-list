@@ -9,16 +9,16 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new(list_params)
+    @list = List.new
   end
 
   def create
     @list = List.new(list_params)
-      if @list.save
+    if @list.save
         redirect_to @list, notice: 'A list was successfully created'
       else
         render :new
-      end
+    end
   end
 
   def edit

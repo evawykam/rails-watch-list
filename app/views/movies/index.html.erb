@@ -1,0 +1,17 @@
+<div class='home-banner'>
+
+<!-- <h1 class="mb-4">Movies</h1> -->
+</div>
+
+
+<div class="card-group index-background-color">
+  <% @movies.each do |movie| %>
+  <div class="card">
+    <%= image_tag movie.poster_url, class: "card-img-top", alt:"movie poster" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to movie.title, movie_path(movie)%></h5>
+      <p class="card-text"><%= movie.overview %></p>
+      <p class="card-text"><small class="text-muted"><%= movie.rating %></small></p>
+    </div>
+    <% end %>
+  </div>
